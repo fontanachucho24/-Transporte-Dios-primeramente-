@@ -1,0 +1,261 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transporte Dios Primeramente | Logística Nacional</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- RESET Y VARIABLES --- */
+        :root {
+            --azul-oscuro: #0a1f44;
+            --azul-principal: #3498db;
+            --negro: #121212;
+            --blanco: #ffffff;
+            --gris-claro: #f8f9fa;
+            --transicion: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--blanco);
+            color: var(--negro);
+            overflow-x: hidden;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 8%;
+            background: rgba(18, 18, 18, 0.98);
+            color: white;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .logo-nav {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo-nav span {
+            color: var(--azul-principal);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            transition: var(--transicion);
+        }
+
+        .nav-links li a:hover {
+            color: var(--azul-principal);
+        }
+
+        /* --- SECCIÓN HERO (INICIO) CON LOGO DE FONDO --- */
+        .hero {
+            height: 100vh;
+            /* Degradado oscuro para que el texto resalte, y el logo de fondo */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                        url('logo.png') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--azul-principal);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: var(--transicion);
+            border: 2px solid transparent;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            border-color: var(--azul-principal);
+            transform: translateY(-3px);
+        }
+
+        /* --- SECCIÓN NOSOTROS --- */
+        .nosotros {
+            padding: 80px 10%;
+            background: var(--blanco);
+        }
+
+        .nosotros h2 {
+            font-size: 2.5rem;
+            color: var(--azul-oscuro);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .nosotros-texto {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: var(--gris-claro);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border-bottom: 4px solid var(--azul-oscuro);
+        }
+
+        .stat-card h3 { font-size: 2.2rem; color: var(--negro); margin-bottom: 5px; }
+
+        /* --- SECCIÓN SERVICIOS --- */
+        .servicios {
+            padding: 80px 10%;
+            background: var(--azul-oscuro);
+            color: white;
+            text-align: center;
+        }
+
+        .servicios h2 { font-size: 2.5rem; margin-bottom: 50px; }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .servicio-card {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 15px;
+            transition: var(--transicion);
+        }
+
+        .servicio-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-10px);
+        }
+
+        .servicio-card i {
+            font-size: 3rem;
+            color: var(--azul-principal);
+            margin-bottom: 15px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #0a0a0a;
+            color: #aaa;
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #222;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nosotros, .servicios { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-nav">Dios <span>Primeramente</span></div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Transporte Dios Primeramente</h1>
+            <p>Expertos en el manejo de todo tipo de carga en todo el territorio nacional, garantizando seguridad y confianza en cada entrega.</p>
+            <a href="#servicios" class="btn-primary">Ver Servicios</a>
+        </div>
+    </header>
+
+    <section id="nosotros" class="nosotros">
+        <h2>Nuestra Reseña</h2>
+        <p class="nosotros-texto">En Transporte Dios Primeramente, la excelencia es nuestra prioridad. Ofrecemos soluciones logísticas terrestres con los más altos estándares de seguridad y eficiencia, confiando cada kilómetro a nuestra fe y profesionalismo.</p>
+        <div class="stats-grid">
+            <div class="stat-card"><h3>100%</h3><p>Seguridad</p></div>
+            <div class="stat-card"><h3>24/7</h3><p>Monitoreo</p></div>
+            <div class="stat-card"><h3>Vzla</h3><p>Cobertura</p></div>
+            <div class="stat-card"><h3>+10</h3><p>Años</p></div>
+        </div>
+    </section>
+
+    <section id="servicios" class="servicios">
+        <h2>Servicios Profesionales</h2>
+        <div class="servicios-grid">
+            <div class="servicio-card"><i class="fas fa-truck"></i><h3>Carga Pesada</h3><p>Soluciones para maquinaria industrial con máxima eficiencia.</p></div>
+            <div class="servicio-card"><i class="fas fa-box"></i><h3>Mercancía General</h3><p>Desde encomiendas hasta grandes lotes.</p></div>
+            <div class="servicio-card"><i class="fas fa-shield-alt"></i><h3>Garantía</h3><p>Nos hacemos responsables de su patrimonio.</p></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Transporte Dios Primeramente - Logística Nacional Profesional.</p>
+    </footer>
+
+</body>
+</html>
